@@ -1,0 +1,21 @@
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+.ball {
+    color: #233438;
+    height: 35px;
+    width: 35px;
+    background-color: gray;
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+}
+
+.selected {
+    border: 5px solid #f8f08d
+}

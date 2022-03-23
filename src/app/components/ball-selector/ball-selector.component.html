@@ -1,0 +1,17 @@
+<div class="container">
+    <section *ngIf="!(ballsService.randomNumber | async); else result">
+        <h3 class="mt-5  text-light">Numbers
+        </h3>
+        <app-balls [ballsArray]="ballsArray" (ballSelected)="addBall($event)"></app-balls>
+        <span class="text-clear text-center my-12" (click)="onRemoveAll()">Clear Selection</span>
+
+    </section>
+
+
+    <ng-template #result>
+        <section>
+            <app-results></app-results>
+
+        </section>
+    </ng-template>
+</div>

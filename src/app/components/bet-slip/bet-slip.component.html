@@ -1,0 +1,25 @@
+<div class="containerBet p-3">
+    <app-balls [ballsArray]="ballsService.balls"></app-balls>
+    <div>
+        <div class="row my-5 mr-2">
+            <div class="input-group col-8">
+                <span class="input-group-text">{{ballsService.balls.length}}x</span>
+                <input type="number" class="form-control" #input>
+                <button class="btn btn-sm col-4 btn-color" (click)="onCalculateBet(input.value)">Ok</button>
+
+            </div>
+        </div>
+
+        <p class="error text-light text-center" *ngIf="error">
+            The minium quantity is 5€
+        </p>
+    </div>
+</div>
+<div>
+    <h2 class="text-center text-light">Total: {{bet}} &euro;</h2>
+
+
+    <button class="btn btn-color col-12 mb-3" (click)="onBet()">Place bet</button>
+
+
+</div>

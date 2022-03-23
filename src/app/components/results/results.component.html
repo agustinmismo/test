@@ -1,0 +1,12 @@
+<div class="containerResult text-center pt-5">
+    <h2 class="mt-4 text-light">Results</h2>
+    <div *ngIf="(resultBet$ |async) as resultBet">
+        <span class="ball mx-auto" [ngStyle]="{backgroundColor: resultBet.color}" [ngClass]="{selected: resultBet.selected}">{{resultBet.id}}</span>
+        <span [class.text-success]="checkResult(resultBet)" [class.text-danger]="!checkResult(resultBet)">
+      YOU {{checkResult(resultBet) ? 'WON' : 'LOSE'}}</span>
+
+        <h2 class="text-light" *ngIf="checkResult(resultBet)">
+            {{moneyWinner}}€
+        </h2> <br>
+    </div>
+</div>
